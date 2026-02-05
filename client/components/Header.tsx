@@ -10,7 +10,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="relative overflow-hidden mb-8">
+    <header id="home" className="relative overflow-hidden mb-8 mt-20">
       {/* Animated background */}
       <div
         className="absolute inset-0 pattern-grid"
