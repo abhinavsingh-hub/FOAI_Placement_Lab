@@ -8,7 +8,8 @@ const companies = [
     difficulty: "Hard",
     category: "Enterprise",
     color: "retro-orange",
-    description: "Google, Meta, Apple, Microsoft - The giants that set industry standards",
+    description:
+      "Google, Meta, Apple, Microsoft - The giants that set industry standards",
     salary: "₹20-50L+",
     examples: "Google, Meta, Apple, Microsoft",
   },
@@ -19,7 +20,8 @@ const companies = [
     difficulty: "Medium",
     category: "Startup",
     color: "retro-lime",
-    description: "Fast-growing companies offering equity and learning opportunities",
+    description:
+      "Fast-growing companies offering equity and learning opportunities",
     salary: "₹8-20L",
     examples: "Stripe, Figma, Notion, Canva",
   },
@@ -30,7 +32,8 @@ const companies = [
     difficulty: "Hard",
     category: "Enterprise",
     color: "retro-purple",
-    description: "Companies focused on building exceptional products and user experiences",
+    description:
+      "Companies focused on building exceptional products and user experiences",
     salary: "₹18-40L",
     examples: "Adobe, Uber, Airbnb, Dropbox",
   },
@@ -41,7 +44,8 @@ const companies = [
     difficulty: "Very Hard",
     category: "Specialized",
     color: "retro-pink",
-    description: "Financial technology companies with complex algorithmic challenges",
+    description:
+      "Financial technology companies with complex algorithmic challenges",
     salary: "₹25-60L",
     examples: "Jane Street, Rubrik, Coinbase",
   },
@@ -76,9 +80,11 @@ export default function CompaniesSection() {
   const [selectedDifficulty, setSelectedDifficulty] = useState("All");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const filteredCompanies = companies.filter(company => {
-    const matchDifficulty = selectedDifficulty === "All" || company.difficulty === selectedDifficulty;
-    const matchCategory = selectedCategory === "All" || company.category === selectedCategory;
+  const filteredCompanies = companies.filter((company) => {
+    const matchDifficulty =
+      selectedDifficulty === "All" || company.difficulty === selectedDifficulty;
+    const matchCategory =
+      selectedCategory === "All" || company.category === selectedCategory;
     return matchDifficulty && matchCategory;
   });
 
@@ -89,10 +95,13 @@ export default function CompaniesSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold font-display uppercase mb-3" style={{
-            color: "hsl(var(--retro-orange))",
-            textShadow: "2px 2px 0 rgba(0,0,0,0.1)"
-          }}>
+          <h2
+            className="text-5xl font-bold font-display uppercase mb-3"
+            style={{
+              color: "hsl(var(--retro-orange))",
+              textShadow: "2px 2px 0 rgba(0,0,0,0.1)",
+            }}
+          >
             ▶ Company Profiles
           </h2>
           <p className="text-lg text-gray-700 font-retro max-w-2xl mx-auto">
@@ -104,17 +113,25 @@ export default function CompaniesSection() {
         <div className="mb-12 p-6 retro-border border-4 border-retro-purple bg-purple-50">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <p className="font-bold font-display text-retro-purple mb-3 uppercase">Filter by Difficulty</p>
+              <p className="font-bold font-display text-retro-purple mb-3 uppercase">
+                Filter by Difficulty
+              </p>
               <div className="flex flex-wrap gap-2">
                 {difficulties.map((diff) => (
                   <button
                     key={diff}
                     onClick={() => setSelectedDifficulty(diff)}
-                    className={`retro-btn text-xs ${selectedDifficulty === diff ? 'ring-2' : ''}`}
+                    className={`retro-btn text-xs ${selectedDifficulty === diff ? "ring-2" : ""}`}
                     style={{
-                      color: selectedDifficulty === diff ? "#fff" : `hsl(var(--retro-orange))`,
+                      color:
+                        selectedDifficulty === diff
+                          ? "#fff"
+                          : `hsl(var(--retro-orange))`,
                       borderColor: `hsl(var(--retro-orange))`,
-                      backgroundColor: selectedDifficulty === diff ? `hsl(var(--retro-orange))` : "transparent",
+                      backgroundColor:
+                        selectedDifficulty === diff
+                          ? `hsl(var(--retro-orange))`
+                          : "transparent",
                     }}
                   >
                     {diff}
@@ -123,17 +140,25 @@ export default function CompaniesSection() {
               </div>
             </div>
             <div>
-              <p className="font-bold font-display text-retro-purple mb-3 uppercase">Filter by Category</p>
+              <p className="font-bold font-display text-retro-purple mb-3 uppercase">
+                Filter by Category
+              </p>
               <div className="flex flex-wrap gap-2">
                 {categories.map((cat) => (
                   <button
                     key={cat}
                     onClick={() => setSelectedCategory(cat)}
-                    className={`retro-btn text-xs ${selectedCategory === cat ? 'ring-2' : ''}`}
+                    className={`retro-btn text-xs ${selectedCategory === cat ? "ring-2" : ""}`}
                     style={{
-                      color: selectedCategory === cat ? "#fff" : `hsl(var(--retro-lime))`,
+                      color:
+                        selectedCategory === cat
+                          ? "#fff"
+                          : `hsl(var(--retro-lime))`,
                       borderColor: `hsl(var(--retro-lime))`,
-                      backgroundColor: selectedCategory === cat ? `hsl(var(--retro-lime))` : "transparent",
+                      backgroundColor:
+                        selectedCategory === cat
+                          ? `hsl(var(--retro-lime))`
+                          : "transparent",
                     }}
                   >
                     {cat}
@@ -160,15 +185,28 @@ export default function CompaniesSection() {
                   <div className="flex items-center gap-3">
                     <span className="text-5xl">{company.icon}</span>
                     <div>
-                      <h3 className="text-2xl font-bold font-display uppercase" style={{
-                        color: `hsl(var(--${company.color}))`
-                      }}>
+                      <h3
+                        className="text-2xl font-bold font-display uppercase"
+                        style={{
+                          color: `hsl(var(--${company.color}))`,
+                        }}
+                      >
                         {company.name}
                       </h3>
-                      <div className="text-xs font-bold font-retro mt-1" style={{
-                        color: `hsl(var(--${company.color}))`
-                      }}>
-                        {company.difficulty} {"▲".repeat(company.difficulty === "Medium" ? 2 : company.difficulty === "Hard" ? 3 : 4)}
+                      <div
+                        className="text-xs font-bold font-retro mt-1"
+                        style={{
+                          color: `hsl(var(--${company.color}))`,
+                        }}
+                      >
+                        {company.difficulty}{" "}
+                        {"▲".repeat(
+                          company.difficulty === "Medium"
+                            ? 2
+                            : company.difficulty === "Hard"
+                              ? 3
+                              : 4,
+                        )}
                       </div>
                     </div>
                   </div>
@@ -178,13 +216,21 @@ export default function CompaniesSection() {
                   {company.description}
                 </p>
 
-                <div className="mb-4 p-3 bg-white rounded-none border-2" style={{
-                  borderColor: `hsl(var(--${company.color}))`
-                }}>
-                  <p className="text-xs font-bold font-retro text-gray-600 mb-1">Expected Salary</p>
-                  <p className="text-lg font-bold font-display" style={{
-                    color: `hsl(var(--${company.color}))`
-                  }}>
+                <div
+                  className="mb-4 p-3 bg-white rounded-none border-2"
+                  style={{
+                    borderColor: `hsl(var(--${company.color}))`,
+                  }}
+                >
+                  <p className="text-xs font-bold font-retro text-gray-600 mb-1">
+                    Expected Salary
+                  </p>
+                  <p
+                    className="text-lg font-bold font-display"
+                    style={{
+                      color: `hsl(var(--${company.color}))`,
+                    }}
+                  >
                     {company.salary}
                   </p>
                 </div>
@@ -207,23 +253,33 @@ export default function CompaniesSection() {
                     ))}
                   </div>
                   <p className="text-xs font-retro text-gray-700">
-                    <span className="font-bold">Examples:</span> {company.examples}
+                    <span className="font-bold">Examples:</span>{" "}
+                    {company.examples}
                   </p>
                 </div>
 
-                <button className="w-full retro-btn text-xs" style={{
-                  color: `hsl(var(--${company.color}))`,
-                  borderColor: `hsl(var(--${company.color}))`,
-                }}
-                onClick={() => alert(`Loading prep guide for ${company.name}...`)}>
+                <button
+                  className="w-full retro-btn text-xs"
+                  style={{
+                    color: `hsl(var(--${company.color}))`,
+                    borderColor: `hsl(var(--${company.color}))`,
+                  }}
+                  onClick={() =>
+                    alert(`Loading prep guide for ${company.name}...`)
+                  }
+                >
                   📋 View Prep Guide
                 </button>
               </div>
             ))
           ) : (
             <div className="col-span-full text-center py-12">
-              <p className="text-2xl font-bold font-display text-gray-600">No companies found</p>
-              <p className="text-gray-600 font-retro mt-2">Try adjusting your filters</p>
+              <p className="text-2xl font-bold font-display text-gray-600">
+                No companies found
+              </p>
+              <p className="text-gray-600 font-retro mt-2">
+                Try adjusting your filters
+              </p>
             </div>
           )}
         </div>
@@ -233,10 +289,15 @@ export default function CompaniesSection() {
           <div className="flex items-start gap-4 text-white">
             <span className="text-4xl flex-shrink-0">💡</span>
             <div>
-              <p className="font-bold font-display uppercase mb-2">Pro Tips for Company-Specific Prep</p>
+              <p className="font-bold font-display uppercase mb-2">
+                Pro Tips for Company-Specific Prep
+              </p>
               <ul className="font-retro text-sm space-y-1">
                 <li>✓ Check Glassdoor for actual interview experiences</li>
-                <li>✓ Review LeetCode problem discussions for company-specific questions</li>
+                <li>
+                  ✓ Review LeetCode problem discussions for company-specific
+                  questions
+                </li>
                 <li>✓ Follow their engineering blogs and technical talks</li>
                 <li>✓ Practice with problems from their previous interviews</li>
               </ul>

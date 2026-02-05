@@ -41,15 +41,37 @@ const quotes = [
 
 const stats = [
   { number: "500+", label: "DSA Problems", icon: "📚", color: "retro-lime" },
-  { number: "100+", label: "Interview Patterns", icon: "🎯", color: "retro-yellow" },
+  {
+    number: "100+",
+    label: "Interview Patterns",
+    icon: "🎯",
+    color: "retro-yellow",
+  },
   { number: "50+", label: "Companies", icon: "🏢", color: "retro-orange" },
-  { number: "10k+", label: "Community Members", icon: "👥", color: "retro-pink" },
+  {
+    number: "10k+",
+    label: "Community Members",
+    icon: "👥",
+    color: "retro-pink",
+  },
 ];
 
 const successStories = [
-  { name: "Rahul K.", company: "Google", message: "Went from struggling to interview-ready in 4 months!" },
-  { name: "Priya M.", company: "Meta", message: "System design section helped me crack the advanced round." },
-  { name: "Arun S.", company: "Amazon", message: "Consistent practice on DSA was the game-changer." },
+  {
+    name: "Rahul K.",
+    company: "Google",
+    message: "Went from struggling to interview-ready in 4 months!",
+  },
+  {
+    name: "Priya M.",
+    company: "Meta",
+    message: "System design section helped me crack the advanced round.",
+  },
+  {
+    name: "Arun S.",
+    company: "Amazon",
+    message: "Consistent practice on DSA was the game-changer.",
+  },
 ];
 
 export default function MotivationSection() {
@@ -62,10 +84,13 @@ export default function MotivationSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold font-display uppercase mb-3" style={{
-            color: "hsl(var(--retro-purple))",
-            textShadow: "2px 2px 0 rgba(0,0,0,0.1)"
-          }}>
+          <h2
+            className="text-5xl font-bold font-display uppercase mb-3"
+            style={{
+              color: "hsl(var(--retro-purple))",
+              textShadow: "2px 2px 0 rgba(0,0,0,0.1)",
+            }}
+          >
             ▶ Stay Motivated
           </h2>
           <p className="text-lg text-gray-700 font-retro max-w-2xl mx-auto">
@@ -85,9 +110,12 @@ export default function MotivationSection() {
               }}
             >
               <div className="text-3xl mb-2">{stat.icon}</div>
-              <div className="text-3xl font-bold font-display mb-2" style={{
-                color: `hsl(var(--${stat.color}))`
-              }}>
+              <div
+                className="text-3xl font-bold font-display mb-2"
+                style={{
+                  color: `hsl(var(--${stat.color}))`,
+                }}
+              >
                 {stat.number}
               </div>
               <p className="font-retro text-sm text-gray-700 font-bold">
@@ -99,9 +127,12 @@ export default function MotivationSection() {
 
         {/* Success Stories */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold font-display uppercase mb-8 text-center" style={{
-            color: "hsl(var(--retro-lime))"
-          }}>
+          <h3
+            className="text-3xl font-bold font-display uppercase mb-8 text-center"
+            style={{
+              color: "hsl(var(--retro-lime))",
+            }}
+          >
             ✨ Real Success Stories
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -113,11 +144,17 @@ export default function MotivationSection() {
                 <div className="flex items-start gap-3 mb-3">
                   <span className="text-4xl">⭐</span>
                   <div>
-                    <p className="font-bold font-display text-retro-lime">{story.name}</p>
-                    <p className="text-xs font-retro text-gray-700">@{story.company}</p>
+                    <p className="font-bold font-display text-retro-lime">
+                      {story.name}
+                    </p>
+                    <p className="text-xs font-retro text-gray-700">
+                      @{story.company}
+                    </p>
                   </div>
                 </div>
-                <p className="font-retro text-gray-800 italic">"{story.message}"</p>
+                <p className="font-retro text-gray-800 italic">
+                  "{story.message}"
+                </p>
               </div>
             ))}
           </div>
@@ -125,12 +162,17 @@ export default function MotivationSection() {
 
         {/* Inspirational Quotes */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold font-display uppercase mb-8 text-center" style={{
-            color: "hsl(var(--retro-purple))"
-          }}>
+          <h3
+            className="text-3xl font-bold font-display uppercase mb-8 text-center"
+            style={{
+              color: "hsl(var(--retro-purple))",
+            }}
+          >
             💭 Inspiration
           </h3>
-          <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 transition-all duration-500 ${quotesExpanded ? '' : 'max-h-96 overflow-hidden'}`}>
+          <div
+            className={`grid grid-cols-1 md:grid-cols-2 gap-6 transition-all duration-500 ${quotesExpanded ? "" : "max-h-96 overflow-hidden"}`}
+          >
             {quotes.map((quote, idx) => (
               <div
                 key={idx}
@@ -160,7 +202,7 @@ export default function MotivationSection() {
               }}
               onClick={() => setQuotesExpanded(!quotesExpanded)}
             >
-              {quotesExpanded ? '▲ Show Less' : '▼ Show More'} Quotes
+              {quotesExpanded ? "▲ Show Less" : "▼ Show More"} Quotes
             </button>
           </div>
         </div>
@@ -171,10 +213,14 @@ export default function MotivationSection() {
             🎯 Today's Challenge
           </h3>
           <p className="font-retro text-gray-900 mb-6">
-            Solve 5 DSA problems, Learn 1 new design pattern, and Build 30 minutes towards your project.
-            Small consistent steps lead to massive breakthroughs!
+            Solve 5 DSA problems, Learn 1 new design pattern, and Build 30
+            minutes towards your project. Small consistent steps lead to massive
+            breakthroughs!
           </p>
-          <button className="retro-btn text-gray-900 border-gray-900" onClick={() => alert('Challenge started! 💪')}>
+          <button
+            className="retro-btn text-gray-900 border-gray-900"
+            onClick={() => alert("Challenge started! 💪")}
+          >
             Start Challenge Now →
           </button>
         </div>
@@ -185,16 +231,21 @@ export default function MotivationSection() {
             Ready to Crush It?
           </h3>
           <p className="font-retro text-white mb-8 max-w-2xl mx-auto text-lg drop-shadow-md">
-            Join thousands of students who transformed their careers with consistent practice and the right guidance.
-            Your dream placement is just a few months away!
+            Join thousands of students who transformed their careers with
+            consistent practice and the right guidance. Your dream placement is
+            just a few months away!
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <button className="retro-btn px-8 py-4 text-lg border-white text-white hover:bg-white hover:text-retro-purple"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <button
+              className="retro-btn px-8 py-4 text-lg border-white text-white hover:bg-white hover:text-retro-purple"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               Back to Roadmap ↑
             </button>
-            <button className="retro-btn px-8 py-4 text-lg bg-white text-retro-purple border-white"
-              onClick={() => alert('Subscription feature coming soon!')}>
+            <button
+              className="retro-btn px-8 py-4 text-lg bg-white text-retro-purple border-white"
+              onClick={() => alert("Subscription feature coming soon!")}
+            >
               Get Premium Access →
             </button>
           </div>
@@ -206,7 +257,8 @@ export default function MotivationSection() {
             Made with ❤️ for dreamers and doers
           </p>
           <p className="font-retro text-gray-600 text-sm">
-            Last updated: 2024 | Keep Coding ⚡ | Your journey to success starts now!
+            Last updated: 2024 | Keep Coding ⚡ | Your journey to success starts
+            now!
           </p>
         </div>
       </div>

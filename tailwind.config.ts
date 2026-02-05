@@ -141,8 +141,9 @@ export default {
         "scan-lines": "scan-lines 8s linear infinite",
       },
       boxShadow: {
-        "retro-glow": "0 0 20px rgba(255, 165, 0, 0.5), 0 0 40px rgba(255, 200, 0, 0.3)",
-        "neon": "0 0 10px currentColor, 0 0 20px currentColor",
+        "retro-glow":
+          "0 0 20px rgba(255, 165, 0, 0.5), 0 0 40px rgba(255, 200, 0, 0.3)",
+        neon: "0 0 10px currentColor, 0 0 20px currentColor",
       },
     },
   },
