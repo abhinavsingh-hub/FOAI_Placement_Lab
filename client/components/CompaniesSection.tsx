@@ -89,7 +89,10 @@ export default function CompaniesSection() {
   });
 
   return (
-    <section id="companies" className="py-16 px-6 relative bg-gradient-to-b from-retro-bg via-pink-50 to-orange-50">
+    <section
+      id="companies"
+      className="py-16 px-6 relative bg-gradient-to-b from-retro-bg via-pink-50 to-orange-50"
+    >
       {/* Background pattern */}
       <div className="absolute inset-0 pattern-dots opacity-20" />
 

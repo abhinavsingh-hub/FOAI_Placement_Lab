@@ -78,7 +78,10 @@ export default function MotivationSection() {
   const [quotesExpanded, setQuotesExpanded] = useState(false);
 
   return (
-    <section id="motivation" className="py-16 px-6 relative bg-gradient-to-b from-purple-50 via-retro-bg to-pink-50">
+    <section
+      id="motivation"
+      className="py-16 px-6 relative bg-gradient-to-b from-purple-50 via-retro-bg to-pink-50"
+    >
       {/* Background pattern */}
       <div className="absolute inset-0 pattern-grid opacity-20" />
 
