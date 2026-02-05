@@ -74,7 +74,7 @@ export default function ResourcesSection() {
   const [expandedIdx, setExpandedIdx] = useState<number | null>(null);
 
   return (
-    <section className="py-16 px-6 relative bg-gradient-to-b from-orange-50 via-yellow-50 to-retro-bg">
+    <section id="resources" className="py-16 px-6 relative bg-gradient-to-b from-orange-50 via-yellow-50 to-retro-bg">
       {/* Background pattern */}
       <div className="absolute inset-0 pattern-lines opacity-20" />
 
