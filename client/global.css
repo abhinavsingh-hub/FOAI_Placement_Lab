@@ -137,6 +137,52 @@
 }
 
 @layer components {
+  .pattern-grid {
+    background-image:
+      linear-gradient(0deg, rgba(255, 165, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 165, 0, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .pattern-dots {
+    background-image: radial-gradient(circle, rgba(255, 165, 0, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  .pattern-waves {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,50 Q25,30 50,50 T100,50' stroke='rgba(255,165,0,0.05)' fill='none' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
+  .pattern-lines {
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 165, 0, 0.03) 10px,
+      rgba(255, 165, 0, 0.03) 20px
+    );
+  }
+
+  .section-bg {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    opacity: 0.5;
+    z-index: 0;
+  }
+
+  .section-content {
+    position: relative;
+    z-index: 1;
+  }
+
   .retro-border {
     @apply border-4 border-solid;
     box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.2), inset -2px -2px 0 rgba(255, 255, 255, 0.5);
@@ -145,22 +191,46 @@
   .retro-card {
     @apply retro-border bg-card rounded-none;
     border-color: hsl(var(--retro-orange));
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .retro-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    opacity: 0.3;
+    z-index: 0;
+  }
+
+  .retro-card > * {
+    position: relative;
+    z-index: 1;
   }
 
   .retro-btn {
     @apply px-6 py-3 font-bold text-base uppercase tracking-wide cursor-pointer;
     @apply rounded-none border-4 border-current;
     box-shadow: inset -2px -2px 0 rgba(0, 0, 0, 0.2), inset 2px 2px 0 rgba(255, 255, 255, 0.8);
-    transition: all 0.1s ease;
+    transition: all 0.15s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    font-size: 0.875rem;
   }
 
   .retro-btn:active {
-    box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.2), inset -2px -2px 0 rgba(255, 255, 255, 0.8);
+    box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.3), inset -2px -2px 0 rgba(255, 255, 255, 0.6);
     transform: translate(2px, 2px);
   }
 
-  .retro-btn:hover {
-    box-shadow: inset -3px -3px 0 rgba(0, 0, 0, 0.3), inset 3px 3px 0 rgba(255, 255, 255, 0.9);
+  .retro-btn:hover:not(:active) {
+    box-shadow: inset -4px -4px 0 rgba(0, 0, 0, 0.25), inset 4px 4px 0 rgba(255, 255, 255, 0.95);
+    transform: translate(-1px, -1px);
+  }
+
+  .retro-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 
   .glitch-text {
